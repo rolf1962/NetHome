@@ -8,11 +8,14 @@ class Floor
 
     private $description;
 
+    public function __construct()
+    {}
+
     /**
      *
      * @return mixed
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -21,7 +24,7 @@ class Floor
      *
      * @return mixed
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -30,7 +33,7 @@ class Floor
      *
      * @param mixed $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -39,12 +42,8 @@ class Floor
      *
      * @param mixed $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
-
-    public function __construct()
-    {}
 }
-

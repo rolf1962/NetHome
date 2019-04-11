@@ -6,18 +6,22 @@ class DbContext
 
     private $mySQLiConnection;
 
-    public function __construct($mySQLiConnection)
+    private $users;
+
+    public function __construct(MySQLiConnection $mySQLiConnection)
     {
         $this->mySQLiConnection = $mySQLiConnection;
+
+        $this->users = new Users($this->mySQLiConnection);
     }
 
     /**
      *
-     * @return mixed
+     * @return \Model\Users
      */
-    public function getMySQLiConnection()
+    public function getUsers()
     {
-        return $this->mySQLiConnection;
+        return $this->users;
     }
 }
 

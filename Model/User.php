@@ -33,7 +33,7 @@ class User
      *
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -42,7 +42,7 @@ class User
      *
      * @return string
      */
-    public function getFirstname()
+    public function getFirstname(): string
     {
         return $this->firstname;
     }
@@ -51,7 +51,7 @@ class User
      *
      * @return string
      */
-    public function getLastname()
+    public function getLastname(): string
     {
         return $this->lastname;
     }
@@ -60,7 +60,7 @@ class User
      *
      * @return \DateTime
      */
-    public function getBirthdate()
+    public function getBirthdate(): \DateTime
     {
         return $this->birthdate;
     }
@@ -69,7 +69,7 @@ class User
      *
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -78,7 +78,7 @@ class User
      *
      * @return bool
      */
-    public function getIsAdmin()
+    public function getIsAdmin(): bool
     {
         return $this->isAdmin;
     }
@@ -87,7 +87,7 @@ class User
      *
      * @return double
      */
-    public function getMoney()
+    public function getMoney(): float
     {
         return $this->money;
     }
@@ -96,7 +96,7 @@ class User
      *
      * @return string
      */
-    public function getWorkplace()
+    public function getWorkplace(): string
     {
         return $this->workplace;
     }
@@ -105,7 +105,7 @@ class User
      *
      * @return string
      */
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -114,7 +114,7 @@ class User
      *
      * @return string
      */
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -123,7 +123,7 @@ class User
      *
      * @return Room
      */
-    public function getRoom()
+    public function getRoom(): Room
     {
         return $this->room;
     }
@@ -132,7 +132,7 @@ class User
      *
      * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -141,7 +141,7 @@ class User
      *
      * @param string $firstname
      */
-    public function setFirstname($firstname)
+    public function setFirstname(string $firstname)
     {
         $this->firstname = $firstname;
     }
@@ -150,7 +150,7 @@ class User
      *
      * @param string $lastname
      */
-    public function setLastname($lastname)
+    public function setLastname(string $lastname)
     {
         $this->lastname = $lastname;
     }
@@ -159,7 +159,7 @@ class User
      *
      * @param \DateTime $birthdate
      */
-    public function setBirthdate($birthdate)
+    public function setBirthdate(\DateTime $birthdate)
     {
         $this->birthdate = $birthdate;
     }
@@ -168,7 +168,7 @@ class User
      *
      * @param string $email
      */
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
     }
@@ -177,7 +177,7 @@ class User
      *
      * @param bool $isAdmin
      */
-    public function setIsAdmin($isAdmin)
+    public function setIsAdmin(bool $isAdmin)
     {
         $this->isAdmin = $isAdmin;
     }
@@ -186,7 +186,7 @@ class User
      *
      * @param double $money
      */
-    public function setMoney($money)
+    public function setMoney(float $money)
     {
         $this->money = $money;
     }
@@ -195,7 +195,7 @@ class User
      *
      * @param string $workplace
      */
-    public function setWorkplace($workplace)
+    public function setWorkplace(string $workplace)
     {
         $this->workplace = $workplace;
     }
@@ -204,7 +204,7 @@ class User
      *
      * @param string $password
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->password = $password;
     }
@@ -213,7 +213,7 @@ class User
      *
      * @param string $username
      */
-    public function setUsername($username)
+    public function setUsername(string $username)
     {
         $this->username = $username;
     }
@@ -222,7 +222,7 @@ class User
      *
      * @param Room $room
      */
-    public function setRoom($room)
+    public function setRoom(Room $room)
     {
         $this->room = $room;
     }

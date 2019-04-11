@@ -1,13 +1,18 @@
 <?php
-    use Model\User;
-    include 'Model/User.php';
-    $user = new User();
+use Model\DbContext;
+use Model\MySQLiConnection;
 
-    $user->setLastname("Jansen");
-    $user->setFirstname("Rolf");
-    $user->setBirthdate(new DateTime('1962/2/24'));
-    
-    print $user->getLastname();
-    print $user->getFirstname();
-    print $user->getBirthdate()->format("d.m.Y");
-?>
+include 'Model/Users.php';
+include 'Model/User.php';
+include 'Model/DbContext.php';
+include 'Model/MySQLiConnection.php';
+
+$dbContext = new DbContext(new MySQLiConnection("lnxsrv", "housemanagement", "housemanager", "Mittern81!"));
+$userlist = $dbContext->getUsers()->GetAll();
+
+foreach ($userlist as $user)
+{
+    echo $user->getLastname() . "<br>";
+    echo $user->getFirstname() . "<br>";;
+    echo $user->getBirthdate()->format("d.m.Y") . "<br>";
+}

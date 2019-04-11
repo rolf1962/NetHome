@@ -13,21 +13,22 @@ class MySQLiConnection
     private $password;
 
     private $connection;
-    
-    public function __construct($hostname, $dbname, $username, $password)
+
+    public function __construct(string $hostname, string $dbname, string $username, string $password)
     {
         $this->dbname = $dbname;
         $this->hostname = $hostname;
         $this->password = $password;
         $this->username = $username;
-        
-        $this->connection=new \mysqli($hostname, $username, $password, $dbname);
+
+        $this->connection = new \mysqli($hostname, $username, $password, $dbname);
     }
 
     /**
+     *
      * @return \mysqli
      */
-    public function getConnection()
+    public function getConnection(): \mysqli
     {
         return $this->connection;
     }

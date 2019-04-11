@@ -17,7 +17,7 @@ class Room
      *
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -26,7 +26,7 @@ class Room
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -35,7 +35,7 @@ class Room
      *
      * @return Floor
      */
-    public function getFloor()
+    public function getFloor(): Floor
     {
         return $this->floor;
     }
@@ -44,7 +44,7 @@ class Room
      *
      * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
     }
@@ -53,7 +53,7 @@ class Room
      *
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description)
     {
         $this->description = $description;
     }
@@ -62,7 +62,7 @@ class Room
      *
      * @param Floor $floor
      */
-    public function setFloor($floor)
+    public function setFloor(Floor $floor)
     {
         $this->floor = $floor;
     }
