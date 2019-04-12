@@ -83,12 +83,13 @@ class Users implements IRepository
     public function Get($model)
     {}
 
+    public function GetByID(int $id)
+    {}
+    
     public function Add($model)
     {}
     
     public function Remove($model)
     {}
 
-    public function GetByID(int $id)
-    {}
 }
