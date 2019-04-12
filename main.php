@@ -7,7 +7,7 @@ include 'Model/User.php';
 include 'Model/DbContext.php';
 include 'Model/MySQLiConnection.php';
 
-$dbContext = new DbContext(new MySQLiConnection("lnxsrv", "housemanagement", "housemanager", "Mittern81!"));
+$dbContext = new DbContext(new MySQLiConnection("localhost", "housemanagement", "housemanager", "Mittern81!"));
 $userlist = $dbContext->getUsers()->GetAll();
 
 foreach ($userlist as $user)
