@@ -7,12 +7,21 @@ include 'Model/User.php';
 include 'Model/DbContext.php';
 include 'Model/MySQLiConnection.php';
 
-$dbContext = new DbContext(new MySQLiConnection("localhost", "housemanagement", "housemanager", "Mittern81!"));
+$dbContext = new DbContext(new MySQLiConnection("lnxsrv", "housemanagement", "housemanager", "Mittern81!"));
 $userlist = $dbContext->getUsers()->GetAll();
 
-foreach ($userlist as $user)
-{
+foreach ($userlist as $user) {
     echo $user->getLastname() . "<br>";
-    echo $user->getFirstname() . "<br>";;
+    echo $user->getFirstname() . "<br>";
     echo $user->getBirthdate()->format("d.m.Y") . "<br>";
+    echo "ID:\t" . $user->getId() . "<br>";
+    echo "Arbeit:\n" . $user->getWorkplace() . "<br>";
+    echo "Admin:\t " . BoolToString($user->getIsAdmin()) . "<br>";
+    echo "Taschengeld:\t" . $user->getMoney() . "<br>";
+    echo "-----------------------------<br>";
+}
+
+function BoolToString(bool $value)
+{
+    return $value == 0 ? "nein" : "ja";
 }
