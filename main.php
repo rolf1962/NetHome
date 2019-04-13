@@ -11,12 +11,12 @@ $dbContext = new DbContext(new MySQLiConnection("lnxsrv", "housemanagement", "ho
 $userlist = $dbContext->getUsers()->GetAll();
 
 foreach ($userlist as $user) {
+    echo "ID:\t" . $user->getId() . "<br>";
+    echo "Admin:\t " . BoolToString($user->getIsAdmin()) . "<br>";
     echo $user->getLastname() . "<br>";
     echo $user->getFirstname() . "<br>";
     echo $user->getBirthdate()->format("d.m.Y") . "<br>";
-    echo "ID:\t" . $user->getId() . "<br>";
     echo "Arbeit:\n" . $user->getWorkplace() . "<br>";
-    echo "Admin:\t " . BoolToString($user->getIsAdmin()) . "<br>";
     echo "Taschengeld:\t" . $user->getMoney() . "<br>";
     echo "-----------------------------<br>";
 }
