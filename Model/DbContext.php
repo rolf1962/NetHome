@@ -19,7 +19,7 @@ class DbContext
      *
      * @return \Model\Users
      */
-    public function getUsers()
+    public function Users()
     {
         return $this->users;
     }

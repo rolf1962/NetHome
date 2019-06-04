@@ -6,11 +6,11 @@ interface IRepository
 
     public function GetAll();
 
-    public function Get($model);
+    public function Get($searchModel);
     
-    public function GetByID(int $id);
+    public function GetByID(int $id) : ModelBase;
 
-    public function Add($model);
+    public function Add(ModelBase $model);
 
-    public function Remove($model);
+    public function Remove(ModelBase $model);
 }

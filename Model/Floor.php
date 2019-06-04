@@ -1,10 +1,9 @@
 <?php
 namespace Model;
+include 'ModelBase.php';
 
-class Floor
+class Floor extends ModelBase
 {
-
-    private $id;
 
     private $description;
 
@@ -15,27 +14,9 @@ class Floor
      *
      * @return mixed
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     *
-     * @return mixed
-     */
     public function getDescription(): string
     {
         return $this->description;
-    }
-
-    /**
-     *
-     * @param mixed $id
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
     }
 
     /**

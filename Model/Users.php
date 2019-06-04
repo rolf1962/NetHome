@@ -3,6 +3,7 @@ namespace Model;
 
 include 'IRepository.php';
 
+
 class Users implements IRepository
 {
 
@@ -38,58 +39,58 @@ class Users implements IRepository
         $query = "Select * from users;";
         $queryResult = $this->mySQLiConnection->getConnection()->query($query);
         $returnValue = array();
-
+        
         foreach ($queryResult as $userRow) {
             $user = new User();
-
+            
             $birthdate = $userRow[Users::$birthdateColumnName] == null ? null : new \DateTime($userRow[Users::$birthdateColumnName]);
             $user->setBirthdate($birthdate);
-
+            
             $email = $userRow[Users::$emailColumnName] == null ? "" : $userRow[Users::$emailColumnName];
             $user->setEmail($email);
-
+            
             $firstname = $userRow[Users::$firstnameColumnName] == null ? "" : $userRow[Users::$firstnameColumnName];
             $user->setFirstname($firstname);
-
+            
             $id = $userRow[Users::$idColumnName] == null ? - 1 : $userRow[Users::$idColumnName];
             $user->setId($id);
-
+            
             $isadmin = $userRow[Users::$isadminColumnName] == null ? - 1 : $userRow[Users::$isadminColumnName];
             $user->setIsAdmin($isadmin);
-
+            
             $lastname = $userRow[Users::$lastnameColumnName] == null ? "" : $userRow[Users::$lastnameColumnName];
             $user->setLastname($lastname);
-
+            
             $money = $userRow[Users::$moneyColumnName] == null ? 0 : $userRow[Users::$moneyColumnName];
             $user->setMoney($money);
-
+            
             $password = $userRow[Users::$passwordColumnName] == null ? "" : $userRow[Users::$passwordColumnName];
             $user->setPassword($password);
-
+            
             // $user->setRoom($userRow["RoomID"]); // Room aus DB lesen und in Objekt mappen
-
+            
             $username = $userRow[Users::$usernameColumnName] == null ? "" : $userRow[Users::$usernameColumnName];
             $user->setUsername($username);
-
+            
             $workplace = $userRow[Users::$workplaceColumnName] == null ? "" : $userRow[Users::$workplaceColumnName];
             $user->setWorkplace($workplace);
-
+            
             $returnValue[] = $user;
         }
-
+        
         return $returnValue;
     }
-
-    public function Get($model)
-    {}
-
-    public function GetByID(int $id)
+    
+    public function Get($searchModel)
     {}
     
-    public function Add($model)
+    public function GetByID(int $id) : ModelBase
     {}
     
-    public function Remove($model)
+    public function Add(ModelBase $model)
     {}
-
+    
+    public function Remove(ModelBase $model)
+    {}
+    
 }

@@ -1,10 +1,10 @@
 <?php
 namespace Model;
 
-class User
-{
+include 'ModelBase.php';
 
-    private $id;
+class User extends ModelBase
+{
 
     private $firstname = "";
 
@@ -28,15 +28,6 @@ class User
 
     public function __construct()
     {}
-
-    /**
-     *
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
 
     /**
      *
@@ -126,15 +117,6 @@ class User
     public function getRoom(): Room
     {
         return $this->room;
-    }
-
-    /**
-     *
-     * @param int $id
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
     }
 
     /**

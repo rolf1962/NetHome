@@ -1,10 +1,9 @@
 <?php
 namespace Model;
+include 'ModelBase.php';
 
-class Room
+class Room extends ModelBase
 {
-
-    private $id;
 
     private $description;
 
@@ -12,15 +11,6 @@ class Room
 
     public function __construct()
     {}
-
-    /**
-     *
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
 
     /**
      *
@@ -38,15 +28,6 @@ class Room
     public function getFloor(): Floor
     {
         return $this->floor;
-    }
-
-    /**
-     *
-     * @param int $id
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
     }
 
     /**

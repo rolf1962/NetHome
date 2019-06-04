@@ -1,25 +1,17 @@
 <?php
 namespace Model;
 
+include 'Config.php';
+
 class MySQLiConnection
 {
 
-    private $hostname;
-
-    private $dbname;
-
-    private $username;
-
-    private $password;
-
     private $connection;
 
-    public function __construct(string $hostname, string $dbname, string $username, string $password)
+    public function __construct($hostname = DB_HOSTNAME, $dbname = DB_DBNAME, string $username = DB_USERNAME, string $password = DB_PASSWORD)
     {
-        $this->dbname = $dbname;
-        $this->hostname = $hostname;
-        $this->password = $password;
-        $this->username = $username;
+        CheckAndStartSession();
+        // CheckAndStartSession(basename(__FILE__), TRUE);
 
         $this->connection = new \mysqli($hostname, $username, $password, $dbname);
     }
